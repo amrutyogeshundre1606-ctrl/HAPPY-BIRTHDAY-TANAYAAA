@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Letter ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      background:linear-gradient(135deg,#ffb6d5,#ffe1ec,#fff5fa);
+      overflow-x:hidden;
+      position:relative;
+      padding:20px;
+    }
+
+    .wrapper{
+      width:100%;
+      max-width:800px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:40px 0;
+    }
+
+    .open-btn{
+      padding:14px 30px;
+      border:none;
+      border-radius:40px;
+      background:#ff4f8b;
+      color:white;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      animation:pulse 2s infinite;
+    }
+
+    .open-btn:hover{
+      transform:scale(1.07);
+    }
+
+    .letter{
+      margin-top:30px;
+      background:rgba(255,255,255,0.75);
+      backdrop-filter:blur(12px);
+      border-radius:25px;
+      padding:25px;
+      color:#444;
+      line-height:1.9;
+      font-size:1rem;
+      box-shadow:0 10px 35px rgba(0,0,0,0.12);
+      opacity:0;
+      transform:translateY(50px);
+      transition:1s ease;
+      display:none;
+      width:100%;
+    }
+
+    .letter.show{
+      display:block;
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .title{
+      text-align:center;
+      font-size:2rem;
+      color:#ff3f7f;
+      margin-bottom:25px;
+      font-weight:700;
+    }
+
+    .heart{
+      position:fixed;
+      font-size:22px;
+      animation:float 8s linear infinite;
+      opacity:0.7;
+      z-index:-1;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(100vh) rotate(0deg);
+      }
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.05);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    @media(max-width:600px){
+      .letter{
+        font-size:0.95rem;
+        padding:20px;
+      }
+
+      .title{
+        font-size:1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <button class="open-btn" onclick="openLetter()">
+      Read Your Birthday Card ❤️
+    </button>
+
+    <div class="letter" id="letter">
+      <div class="title">Happy Birthday Tanaya ❤️</div>
+
+      <p>
+        HAPPY BITHDAY TANAYA BAL ❤️
+        <br><br>
+
+        you are the most strongest girl ever i wish u many many return of the day
+        never make ur smile fade and always have a big smile no matter what
+        i love you a lot ❤️
+        <br><br>
+
+        Tanaya ❤️
+        <br><br>
+
+        I don’t even know where to start because no words ever feel enough when it comes to you.
+        You’ve become such a special part of my life that even the smallest moments with you feel unforgettable.
+        <br><br>
+
+        You make my days softer, brighter, happier… just by being there.
+        Your smile calms me, your voice feels like home, and your presence somehow makes everything better.
+        <br><br>
+
+        I know life isn’t always easy, and you carry so much strength inside you even when you don’t realize it.
+        That’s one of the many things I admire about you.
+        You’re beautiful in the way you care, the way you love, the way you stay strong,
+        and even in the way you deny how amazing you really are.
+        <br><br>
+
+        On your birthday, I just want you to feel loved — truly, deeply loved.
+        Because you deserve that and so much more.
+        <br><br>
+
+        Thank you for being you.
+        Thank you for letting me be a part of your life.
+        And thank you for all the memories we’ve made and the ones we still have waiting for us.
+        <br><br>
+
+        I hope this year brings you peace, happiness, success, late-night laughs,
+        warm hugs, and every little thing your heart secretly wishes for.
+        <br><br>
+
+        And no matter what happens, I’ll always cheer for your smile first.
+        <br><br>
+
+        Happy Birthday once again, my girl.
+        <br>
+        I love you endlessly, Tanaya ❤️
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function openLetter(){
+      document.getElementById("letter").classList.add("show");
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    // Floating hearts
+    function createHeart(){
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+      heart.style.animationDuration = (Math.random() * 4 + 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      },8000);
+    }
+
+    setInterval(createHeart,400);
+  </script>
+
+</body>
+</html>
